@@ -3,63 +3,12 @@ description: "A computational toolkit for generating and analyzing warp bubble s
 baseurl: "/warp-bubble-metric-ansatz"
 url: "https://arcticoder.github.io"
 
-# GitHub Pages settings
-remote_theme: null
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-# SEO settings
-author: "arcticoder"
-twitter:
-  username: arcticoder
-  card: summary_large_image
-
-# Navigation
-navigation:
-  - name: "Overview"
-    link: "#overview"
-  - name: "Metrics"
-    link: "#metrics"
-  - name: "Usage"
-    link: "#usage"
-  - name: "Documentation"
-    link: "#documentation"
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
+# GitHub Pages settings - simplified for static files
+plugins: []
 
 # Exclude files from build
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor
-  - .sass-cache
-  - .jekyll-cache
-  - .gitignore
-
-# Include files
-include:
-  - _pages
-
-# Collections
-collections:
-  pages:
-    output: true
-    permalink: /:name/
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-    values:
-      image: "/assets/images/og-image.png"
+  - SETUP.md
