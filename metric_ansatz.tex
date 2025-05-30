@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+Coordinates: (t, r, θ, φ) with axial symmetry about the z-axis; functions have compact support in r.
+
+\section*{Alcubierre}
+Profile: \(f(r,t) = \mathrm{interpolated\_alcubierre}(r)\) (NPZ data for alcubierre with 500 points)
+
+\[
+ds^2 = -\,dt^2 + \bigl(1 - f(r,t)\bigr)\,dr^2 + r^2\,d\theta^2 + r^2\sin^2\theta\,d\phi^2
+\]
+
+\section*{Natário}
+Profile: \(f(r,t) = \mathrm{interpolated\_natario}(r)\) (NPZ data for natario with 500 points)
+
+\[
+ds^2 = -\,dt^2 + \bigl(1 - f(r,t)\bigr)\,dr^2 + r^2\,d\theta^2 + r^2\sin^2\theta\,d\phi^2
+\]
+
+\end{document}
