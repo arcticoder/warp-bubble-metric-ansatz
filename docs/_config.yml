@@ -3,8 +3,8 @@ description: "A computational toolkit for generating and analyzing warp bubble s
 baseurl: "/warp-bubble-metric-ansatz"
 url: "https://arcticoder.github.io"
 
-# GitHub Pages settings
-remote_theme: jekyll/minima
+# GitHub Pages settings - simplified for static files
+plugins: []
 
 # Exclude files from build
 exclude:
@@ -12,8 +12,3 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - SETUP.md
-
-# Include additional file types
-include:
-  - "*.pdf"
-  - "*.tex"

@@ -34,31 +34,46 @@ def main():
     sections = []
 
     for name, url in SHAPES.items():
-        data = load_shape(url)
-        f_str = data['f']  # e.g. "interpolated_alcubierre(r)"
-        # Map the function name to the Sympy Function
-        local_map = {
-            'interpolated_alcubierre': interp_alc,
-            'interpolated_natario':    interp_nat,
-            'r': r, 't': t
-        }
-        f_expr = sympify(f_str, locals=local_map)
-        # Build metric matrix (not directly used in .tex but exercise)
-        g = build_metric(f_expr, r, theta)
+        try:
+            data = load_shape(url)
+            f_str = data['f']  # e.g. "interpolated_alcubierre(r)"
+            # Map the function name to the Sympy Function
+            local_map = {
+                'interpolated_alcubierre': interp_alc,
+                'interpolated_natario':    interp_nat,
+                'r': r, 't': t
+            }
+            f_expr = sympify(f_str, locals=local_map)
+            # Build metric matrix (not directly used in .tex but exercise)
+            g = build_metric(f_expr, r, theta)
 
-        # Prepare LaTeX block
-        line_element = (
-            r"ds^2 = -\,dt^2 + \bigl(1 - f(r,t)\bigr)\,dr^2 "
-            r"+ r^2\,d\theta^2 + r^2\sin^2\theta\,d\phi^2"
-        )
-        profile_desc = data.get('description', '')    # Write the LaTeX document
+            # Prepare LaTeX block
+            line_element = (
+                r"ds^2 = -\,dt^2 + \bigl(1 - f(r,t)\bigr)\,dr^2 "
+                r"+ r^2\,d\theta^2 + r^2\sin^2\theta\,d\phi^2"
+            )
+            profile_desc = data.get('description', '')
+            
+            # Add to sections list
+            sections.append((name, f_str, profile_desc, line_element))
+            
+        except Exception as e:
+            print(f"Warning: Could not load {name} profile: {e}")
+            # Add fallback section
+            line_element = (
+                r"ds^2 = -\,dt^2 + \bigl(1 - f(r,t)\bigr)\,dr^2 "
+                r"+ r^2\,d\theta^2 + r^2\sin^2\theta\,d\phi^2"
+            )
+            sections.append((name, "f(r,t)", f"{name} warp bubble profile", line_element))
+
+    # Write the LaTeX document
     with open("metric_ansatz.tex", "w", encoding="utf-8") as tex:
         tex.write(r"""\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \begin{document}
 
-Coordinates: (t, r, \theta, \phi) with axial symmetry about the z-axis; functions have compact support in r.
+Coordinates: $(t, r, \theta, \phi)$ with axial symmetry about the z-axis; functions have compact support in $r$.
 
 """)
         for name, f_str, desc, elem in sections:
