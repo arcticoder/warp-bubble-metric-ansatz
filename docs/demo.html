@@ -113,10 +113,9 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
+    <script src="script.js"></script>    <script>
         // Load LaTeX content
-        fetch('../metric_ansatz.tex')
+        fetch('/warp-bubble-metric-ansatz/metric_ansatz.tex')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('latex-content').textContent = data;
