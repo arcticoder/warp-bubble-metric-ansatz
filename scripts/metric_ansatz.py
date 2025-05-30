@@ -52,10 +52,8 @@ def main():
             r"+ r^2\,d\theta^2 + r^2\sin^2\theta\,d\phi^2"
         )
         profile_desc = data.get('description', '')
-        sections.append((name, f_str, profile_desc, line_element))
-
-    # Write the LaTeX document
-    with open("metric_ansatz.tex", "w") as tex:
+        sections.append((name, f_str, profile_desc, line_element))    # Write the LaTeX document
+    with open("metric_ansatz.tex", "w", encoding="utf-8") as tex:
         tex.write(r"""\documentclass{article}
 \usepackage{amsmath}
 \begin{document}

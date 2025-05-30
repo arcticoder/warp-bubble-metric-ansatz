@@ -32,7 +32,7 @@ A small toolkit to fetch warp-bubble profile definitions from the `warp-bubble-c
 2.  Run the generator script:
     
     ```bash
-    python metric_ansatz.py
+    python scripts/metric_ansatz.py
     ```
     
     This will produce/update `metric_ansatz.tex`.
