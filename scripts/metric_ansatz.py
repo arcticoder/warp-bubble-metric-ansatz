@@ -51,14 +51,14 @@ def main():
             r"ds^2 = -\,dt^2 + \bigl(1 - f(r,t)\bigr)\,dr^2 "
             r"+ r^2\,d\theta^2 + r^2\sin^2\theta\,d\phi^2"
         )
-        profile_desc = data.get('description', '')
-        sections.append((name, f_str, profile_desc, line_element))    # Write the LaTeX document
+        profile_desc = data.get('description', '')    # Write the LaTeX document
     with open("metric_ansatz.tex", "w", encoding="utf-8") as tex:
         tex.write(r"""\documentclass{article}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \begin{document}
 
-Coordinates: (t, r, θ, φ) with axial symmetry about the z-axis; functions have compact support in r.
+Coordinates: (t, r, \theta, \phi) with axial symmetry about the z-axis; functions have compact support in r.
 
 """)
         for name, f_str, desc, elem in sections:

@@ -1,0 +1,16 @@
+source "https://rubygems.org"
+
+# Jekyll and plugins
+gem "jekyll", "~> 4.3.0"
+gem "jekyll-sitemap"
+gem "jekyll-seo-tag"
+
+# GitHub Pages compatibility
+gem "github-pages", group: :jekyll_plugins
+
+# Performance and development
+gem "webrick", "~> 1.8"
+
+group :development do
+  gem "jekyll-watch"
+end

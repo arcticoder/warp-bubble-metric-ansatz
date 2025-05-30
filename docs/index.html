@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warp Bubble Metric Ansatz</title>
+    <meta name="description" content="A computational toolkit for generating and analyzing warp bubble spacetime metrics, including Alcubierre and Natário profiles with automated LaTeX documentation.">
+    <meta name="keywords" content="warp drive, alcubierre, natario, spacetime, metric, general relativity, physics">
+    <meta name="author" content="arcticoder">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arcticoder.github.io/warp-bubble-metric-ansatz/">
+    <meta property="og:title" content="Warp Bubble Metric Ansatz">
+    <meta property="og:description" content="A computational toolkit for generating and analyzing warp bubble spacetime metrics">
+    <meta property="og:image" content="https://arcticoder.github.io/warp-bubble-metric-ansatz/assets/favicon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arcticoder.github.io/warp-bubble-metric-ansatz/">
+    <meta property="twitter:title" content="Warp Bubble Metric Ansatz">
+    <meta property="twitter:description" content="A computational toolkit for generating and analyzing warp bubble spacetime metrics">
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Warp Bubble Metric Ansatz</h1>
+            </div>            <div class="nav-links">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#metrics" class="nav-link">Metrics</a>
+                <a href="#usage" class="nav-link">Usage</a>
+                <a href="#documentation" class="nav-link">Documentation</a>
+                <a href="demo.html" class="nav-link">Demo</a>
+                <a href="https://github.com/arcticoder/warp-bubble-metric-ansatz" class="nav-link github-link" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1 class="hero-title">Warp Bubble Metric Ansatz</h1>
+                <p class="hero-subtitle">
+                    A computational toolkit for generating and analyzing warp bubble spacetime metrics, 
+                    including Alcubierre and Natário profiles with automated LaTeX documentation.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#overview" class="btn btn-primary">Get Started</a>
+                    <a href="https://github.com/arcticoder/warp-bubble-metric-ansatz" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview" class="section">
+            <div class="container">
+                <h2>Overview</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Automated Generation</h3>
+                        <p>Automatically downloads and processes warp bubble profile definitions from the coordinate specification repository.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📐</div>
+                        <h3>SymPy Integration</h3>
+                        <p>Constructs symbolic metric matrices using SymPy for mathematical precision and computational analysis.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📄</div>
+                        <h3>LaTeX Output</h3>
+                        <p>Generates publication-ready LaTeX documents with properly formatted metric line elements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metrics" class="section bg-light">
+            <div class="container">
+                <h2>Supported Metric Profiles</h2>
+                
+                <div class="metric-card">
+                    <h3>Alcubierre Drive</h3>
+                    <p>The classic Alcubierre warp drive metric that contracts spacetime in front of the vessel and expands it behind.</p>
+                    <div class="math-display">
+                        $$ds^2 = -dt^2 + (1 - f(r,t))dr^2 + r^2d\theta^2 + r^2\sin^2\theta\,d\phi^2$$
+                    </div>
+                    <div class="profile-info">
+                        <strong>Profile:</strong> $f(r,t) = \text{interpolated\_alcubierre}(r)$
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <h3>Natário Drive</h3>
+                    <p>An alternative warp drive formulation that provides different energy requirements and stability properties.</p>
+                    <div class="math-display">
+                        $$ds^2 = -dt^2 + (1 - f(r,t))dr^2 + r^2d\theta^2 + r^2\sin^2\theta\,d\phi^2$$
+                    </div>
+                    <div class="profile-info">
+                        <strong>Profile:</strong> $f(r,t) = \text{interpolated\_natario}(r)$
+                    </div>
+                </div>
+
+                <div class="coordinate-info">
+                    <h4>Coordinate System</h4>
+                    <p>All metrics use spherical coordinates $(t, r, \theta, \phi)$ with axial symmetry about the z-axis. The profile functions have compact support in the radial coordinate $r$.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="usage" class="section">
+            <div class="container">
+                <h2>Usage</h2>
+                
+                <div class="usage-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Prerequisites</h3>
+                            <p>Install required dependencies:</p>
+                            <div class="code-block">
+                                <code>pip install requests sympy</code>
+                            </div>
+                            <p>Ensure you have a LaTeX distribution with the <code>amsmath</code> package.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Clone Repository</h3>                            <div class="code-block">
+                                <code>git clone https://github.com/arcticoder/warp-bubble-metric-ansatz.git<br>
+                                cd warp-bubble-metric-ansatz</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Generate Metrics</h3>
+                            <p>Run the generator script to create the LaTeX document:</p>
+                            <div class="code-block">
+                                <code>python scripts/metric_ansatz.py</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Compile LaTeX</h3>
+                            <div class="code-block">
+                                <code>pdflatex metric_ansatz.tex</code>
+                            </div>
+                            <p>This produces <code>metric_ansatz.pdf</code> with the formatted metric equations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="documentation" class="section bg-light">
+            <div class="container">
+                <h2>Documentation</h2>
+                
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <h3>Repository Structure</h3>
+                        <div class="file-tree">
+                            <div class="file-item">📁 scripts/</div>
+                            <div class="file-item indent">📄 metric_ansatz.py</div>
+                            <div class="file-item">📄 metric_ansatz.tex</div>
+                            <div class="file-item">📄 metric_ansatz.pdf</div>
+                            <div class="file-item">📄 README.md</div>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <h3>Key Components</h3>
+                        <ul class="component-list">
+                            <li><strong>metric_ansatz.py:</strong> Main generator script</li>
+                            <li><strong>build_metric():</strong> Constructs 4×4 metric matrices</li>
+                            <li><strong>load_shape():</strong> Downloads profile definitions</li>
+                            <li><strong>LaTeX output:</strong> Formatted mathematical expressions</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-card">
+                        <h3>Data Sources</h3>
+                        <p>Profile definitions are fetched from the 
+                        <a href="https://github.com/arcticoder/warp-bubble-coordinate-spec" target="_blank">warp-bubble-coordinate-spec</a> 
+                        repository, ensuring consistency with the latest coordinate specifications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Warp Bubble Metric Ansatz Project. Open source under MIT License.</p>            <div class="footer-links">
+                <a href="https://github.com/arcticoder/warp-bubble-metric-ansatz">GitHub</a>
+                <a href="https://github.com/arcticoder/warp-bubble-coordinate-spec">Coordinate Spec</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
