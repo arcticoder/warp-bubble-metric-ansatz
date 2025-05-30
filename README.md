@@ -13,7 +13,7 @@ A small toolkit to fetch warp-bubble profile definitions from the `warp-bubble-c
 
 - Python 3.7+
 - Python packages:
-  ```bash
+```bash
   pip install requests sympy
 ```
 
@@ -24,24 +24,24 @@ A small toolkit to fetch warp-bubble profile definitions from the `warp-bubble-c
 
 1.  Clone the repo:
     
-    ```bash
-    git clone https://github.com/your-org/warp-bubble-metric-ansatz.git
-    cd warp-bubble-metric-ansatz
-    ```
+```bash
+git clone https://github.com/your-org/warp-bubble-metric-ansatz.git
+cd warp-bubble-metric-ansatz
+```
     
 2.  Run the generator script:
     
-    ```bash
-    python scripts/metric_ansatz.py
-    ```
+```bash
+python scripts/metric_ansatz.py
+```
     
     This will produce/update `metric_ansatz.tex`.
     
 3.  Compile the LaTeX file:
     
-    ```bash
-    pdflatex metric_ansatz.tex
-    ```
+```bash
+pdflatex metric_ansatz.tex
+```
     
 
 You’ll end up with `metric_ansatz.pdf` showing the line elements for both warp-bubble profiles.
