@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"name": "warp-bubble-metric-ansatz",
+			"path": "."
+		},
+		{
+			"name": "warp-bubble-coordinate-spec",
+			"path": "../warp-bubble-coordinate-spec"
+		},
+		{
+			"name": "warp-bubble-shape-catalog",
+			"path": "../warp-bubble-shape-catalog"
+		},
+		{
+			"name": "warp-bubble-connection-curvature",
+			"path": "../warp-bubble-connection-curvature"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/node_modules": true,
+			"**/__pycache__": true,
+			"**/.pytest_cache": true,
+			"**/venv": true,
+			"**/.venv": true
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-python.python",
+			"ms-vscode.cpptools",
+			"james-yu.latex-workshop"
+		]
+	}
+}
